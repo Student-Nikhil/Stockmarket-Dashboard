@@ -1,0 +1,239 @@
+@import "tailwindcss";
+
+:root {
+    color-scheme: dark;
+    --app-bg: #020617;
+    --surface-1: #020617;
+    --surface-2: #0f172a;
+    --surface-3: #111827;
+    --surface-4: #1f2937;
+    --surface-overlay: rgba(255, 255, 255, 0.06);
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border-color: rgba(255, 255, 255, 0.12);
+}
+
+html.light {
+    color-scheme: light;
+    --app-bg: #f8fafc;
+    --surface-1: #f8fafc;
+    --surface-2: #f1f5f9;
+    --surface-3: #e2e8f0;
+    --surface-4: #cbd5e1;
+    --surface-overlay: rgba(15, 23, 42, 0.05);
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+    --border-color: rgba(15, 23, 42, 0.1);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter, sans-serif;
+    background:var(--app-bg);
+    color:var(--text-primary);
+    overflow-x:hidden;
+    transition:background-color 0.2s ease, color 0.2s ease;
+}
+
+#root{
+    min-height:100vh;
+}
+
+html.light .bg-slate-950,
+html.light .bg-slate-900,
+html.light .bg-slate-900\/60,
+html.light .bg-slate-800,
+html.light .bg-slate-700,
+html.light .bg-slate-800\/60,
+html.light .bg-slate-900\/70,
+html.light .bg-slate-900\/80,
+html.light .bg-white\/5,
+html.light .bg-white\/10,
+html.light .bg-white\/20 {
+    background-color: var(--surface-2) !important;
+}
+
+html.light .bg-slate-950 {
+    background-color: var(--surface-1) !important;
+}
+
+html.light .bg-slate-800 {
+    background-color: var(--surface-3) !important;
+}
+
+html.light .bg-slate-700 {
+    background-color: var(--surface-4) !important;
+}
+
+html.light .bg-white\/5,
+html.light .bg-white\/10,
+html.light .bg-white\/20 {
+    background-color: var(--surface-overlay) !important;
+}
+
+html.light .text-white {
+    color: var(--text-primary) !important;
+}
+
+html.light .text-slate-300 {
+    color: var(--text-secondary) !important;
+}
+
+html.light .text-slate-400,
+html.light .text-slate-500,
+html.light .text-slate-600 {
+    color: var(--text-muted) !important;
+}
+
+html.light .border-white\/10,
+html.light .border-slate-800,
+html.light .border-slate-700,
+html.light .border-slate-800\/60,
+html.light .border-slate-800\/70,
+html.light .border-slate-800\/80,
+html.light .border-slate-800\/90 {
+    border-color: var(--border-color) !important;
+}
+
+html.light .shadow-2xl,
+html.light .shadow-xl,
+html.light .shadow-lg,
+html.light .shadow-md,
+html.light .shadow-sm {
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Shared page rhythm: keep every major area aligned and evenly spaced. */
+.site-container {
+    width: min(calc(100% - 3rem), 1400px);
+    margin-inline: auto;
+}
+
+.site-section {
+    padding-block: clamp(4.5rem, 8vw, 7.5rem);
+}
+
+.site-hero {
+    padding-top: clamp(9rem, 14vw, 11rem);
+    padding-bottom: clamp(5rem, 8vw, 8rem);
+}
+
+.site-page {
+    padding-top: clamp(9rem, 14vw, 11rem);
+    padding-bottom: clamp(4.5rem, 8vw, 7.5rem);
+}
+
+.section-intro {
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+@media (max-width: 640px) {
+    .site-container {
+        width: min(calc(100% - 2rem), 1400px);
+    }
+}
+
+.app{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px 20px;
+
+    background:
+    radial-gradient(circle at top left,#2563eb22,transparent 35%),
+    radial-gradient(circle at bottom right,#14b8a622,transparent 35%),
+    #0F172A;
+}
+
+.coming-soon{
+
+    width:100%;
+
+    max-width:1200px;
+
+    background:rgba(255,255,255,.05);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:80px 40px;
+
+    text-align:center;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+
+.coming-soon h1{
+
+    font-size:56px;
+
+    font-weight:800;
+
+    margin-bottom:20px;
+
+    background:linear-gradient(to right,#3b82f6,#06b6d4);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+}
+
+.coming-soon p{
+
+    font-size:24px;
+
+    color:#CBD5E1;
+
+    margin-bottom:20px;
+}
+
+.coming-soon span{
+
+    font-size:18px;
+
+    color:#94A3B8;
+}
+
+@media(max-width:768px){
+
+.coming-soon{
+
+padding:50px 25px;
+
+}
+
+.coming-soon h1{
+
+font-size:38px;
+
+}
+
+.coming-soon p{
+
+font-size:20px;
+
+}
+
+}
